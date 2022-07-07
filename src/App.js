@@ -1,5 +1,6 @@
 import React from 'react';
-import Menu from './components/UI/Menu/Menu';
+import Menu from './components/Menu/Menu';
+import Main from './components/Main/Main';
 import './styles/App.css'
 function App() {
 	return (
@@ -7,6 +8,7 @@ function App() {
 			<header>
 				<Menu />
 			</header>
+			<Main />
 		</div>
 	);
 }

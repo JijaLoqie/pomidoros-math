@@ -1,4 +1,4 @@
-import MyButton from '../MyButton/MyButton';
+import MyButton from '../UI/MyButton/MyButton';
 import classes from './Menu.module.css';
 
 function Menu() {

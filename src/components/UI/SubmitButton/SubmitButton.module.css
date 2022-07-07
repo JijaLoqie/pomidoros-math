@@ -1,0 +1,12 @@
+
+.myBtn {
+	margin-left: 15px;
+	padding: 15px;
+	background-color: rgb(255, 99, 71);
+}
+
+.myBtn:hover {
+	transition: 0.1s;
+	color:wheat;
+	background-color: rgb(159, 58, 41);
+}

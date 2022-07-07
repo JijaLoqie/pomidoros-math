@@ -8,24 +8,8 @@
 	font-weight: lighter;
 	font-family:'Courier New', bold, monospace;
 	cursor: pointer;
-	position: relative;
-	z-index: 100;
 }
 
-.myBtn:before {
-	border-radius: inherit;
-	background-image: linear-gradient(-90deg, #a345b290 0%, #6a354e 32%, #432034 68%, #572b4e 100%);
-	content: '';
-	height: 100%;
-	position: absolute;
-	top: 0; left: 0;
-	opacity: 0;
-	width: 100%;
-	z-index: -100;
-	transition: opasity 1.0s;
-
-}
-
-.myBtn:hover:before {
-	opacity: 1;
+.myBtn:hover {
+	background-image: linear-gradient(-90deg, #A445B2 0%, #6a354e 32%, #432034 68%, #A445B2 100%);
 }
