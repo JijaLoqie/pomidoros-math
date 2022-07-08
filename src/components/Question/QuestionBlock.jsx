@@ -13,7 +13,7 @@ function QuestionBlock(props) {
 	const solveTask = (num1, num2, operator) => {
 		switch (operator) {
 			case '*':
-				return num1 * num2;
+				return (num1) * (num2);
 			case '+':
 				return num1 + num2;
 			case '-':
@@ -23,21 +23,22 @@ function QuestionBlock(props) {
 		}
 	}
 	const handleClick = (e) => {
+		e.preventDefault();
 		const real = solveTask(props.post.num1, props.post.num2, props.post.operator);
 		if (real == answer) {
 			console.log('correct!');
 			props.handleCorrect(props.post);
 		} else {
 			console.log('error!');
-			console.log(answer);
-			console.log(real);
 		}
 	}
 	return (
 		<div className={classes.question_body}>
-			<LabelTask>{props.post.num1} {props.post.operator} {props.post.num2}</LabelTask>
-			<MyInput placeholder='   _  _  _  _  _  _  _  _  _   ' type='number' onChange={handleChange}></MyInput>
-			<SubmitButton className={classes.SubmitButton} onClick={handleClick}>Готово</SubmitButton>
+			<LabelTask className={classes.MyInput}>{props.post.num1} {props.post.operator} {props.post.num2}</LabelTask>
+			<form onSubmit={handleClick}>
+				<MyInput value='' placeholder='   _  _  _  _  _  _  _  _  _   ' type='number' onChange={handleChange}></MyInput>
+				<SubmitButton type='submit' className={classes.SubmitButton}>Готово</SubmitButton>
+			</form>
 		</div>
 	);
 }

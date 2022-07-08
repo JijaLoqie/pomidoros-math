@@ -6,6 +6,6 @@
 	flex-flow: column wrap;
 	justify-content: space-between;
 	height: 80vh;
-	background-color: white;
+	background-color: transparent;
 	margin: 100px auto 0;
 }

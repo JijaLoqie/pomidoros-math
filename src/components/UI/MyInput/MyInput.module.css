@@ -5,11 +5,10 @@
 	font-size: x-large;
 	font-weight: 700;
 	background-color: rgb(0, 0, 0, 0.1);
-	color:aliceblue;
-	width: 50%;
+	color:black;
+	width: 100%;
 }
 
 .myInpt[type=number]:focus {
-	color: black;
-	border: 3px solid #555;
+	color:black;
 }
