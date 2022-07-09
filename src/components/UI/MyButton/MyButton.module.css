@@ -8,8 +8,10 @@
 	font-weight: lighter;
 	font-family:'Courier New', bold, monospace;
 	cursor: pointer;
+	transition: color 1s;
 }
 
 .myBtn:hover {
+	color: wheat;
 	background-image: linear-gradient(-90deg, #A445B2 0%, #6a354e 32%, #432034 68%, #A445B2 100%);
 }

@@ -8,11 +8,9 @@
 body {
 	background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
 	background-attachment: fixed;
-
-	margin: 0;
 }
 
-Main {
-	width: 100px; height: 100px;
-	background-color: white;
+main {
+	display: flex;
+	justify-content: center;
 }

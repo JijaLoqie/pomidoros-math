@@ -8,7 +8,9 @@ function App() {
 			<header>
 				<Menu />
 			</header>
-			<Main />
+			<main>
+				<Main />
+			</main>
 		</div>
 	);
 }

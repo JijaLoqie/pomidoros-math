@@ -5,10 +5,13 @@ import classes from './QuestionBlock.module.css';
 import { useState } from 'react';
 
 function QuestionBlock(props) {
-	const [answer, setAnswer] = useState(0);
-
+	const [answer, setAnswer] = useState('');
+	const [correct, setCorrect] = useState(false);
 	const handleChange = (e) => {
 		setAnswer(e.target.value);
+	}
+	function sleep(time) {
+		return new Promise((resolve) => setTimeout(resolve, time));
 	}
 	const solveTask = (num1, num2, operator) => {
 		switch (operator) {
@@ -26,17 +29,20 @@ function QuestionBlock(props) {
 		e.preventDefault();
 		const real = solveTask(props.post.num1, props.post.num2, props.post.operator);
 		if (real == answer) {
+			setCorrect(true);
 			console.log('correct!');
-			props.handleCorrect(props.post);
+			sleep(2000).then(() => props.handleCorrect(props.post));
+
 		} else {
 			console.log('error!');
 		}
+		setAnswer('');
 	}
 	return (
-		<div className={classes.question_body}>
+		<div style={(correct) ? { transition: '1s', transform: 'translate(100vw, 0)' } : {}} className={classes.question_body}>
 			<LabelTask className={classes.MyInput}>{props.post.num1} {props.post.operator} {props.post.num2}</LabelTask>
 			<form onSubmit={handleClick}>
-				<MyInput value='' placeholder='   _  _  _  _  _  _  _  _  _   ' type='number' onChange={handleChange}></MyInput>
+				<MyInput value={answer} placeholder='   _  _  _  _  _  _  _  _  _   ' type='number' onChange={handleChange}></MyInput>
 				<SubmitButton type='submit' className={classes.SubmitButton}>Готово</SubmitButton>
 			</form>
 		</div>

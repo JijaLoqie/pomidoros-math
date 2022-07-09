@@ -1,11 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
 .math_panel {
-	display: flex;
-	flex-direction: column;
+	transition: 1s;
 	width: 965px;
-	flex-grow: 1;
-	flex-flow: column wrap;
-	justify-content: space-between;
 	height: 80vh;
-	background-color: transparent;
-	margin: 100px auto 0;
+}
+
+h1 {
+	font-family: 'Nanum Pen Script', cursive;
+	text-align: center;
+	font-size: xxx-large;
 }

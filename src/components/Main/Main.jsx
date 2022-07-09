@@ -13,7 +13,7 @@ const Main = (props) => {
 			const num1 = Math.floor(Math.random() * 100);
 			const num2 = Math.floor(Math.random() * 100);
 			const operatorIndex = Math.floor(Math.random() * operators.length);
-			setPosts(posts => [...posts, { num1: num1, num2: num2, operator: operators[operatorIndex] }]);
+			setPosts(posts => (posts.length < 5) ? [...posts, { num1: num1, num2: num2, operator: operators[operatorIndex] }] : posts);
 		}
 		const interval = setInterval(addNewTask, timeInterval);
 		return () => clearInterval(interval);
@@ -21,16 +21,23 @@ const Main = (props) => {
 
 
 	const handleCorrect = (post) => {
-		setPosts(posts.filter((element) => {
-			return (element.num1 !== post.num1 ||
-				element.num2 !== post.num2 ||
-				element.operator !== post.operator)
+		setPosts(posts.flatMap((element, index) => {
+			if (element.num1 === post.num1 &&
+				element.num2 === post.num2 &&
+				element.operator === post.operator) {
+				return { num1: 999, num2: -999, operator: '??' };
+			} else {
+				return element;
+			}
 		}))
 	}
 	return (
 		<div className={classes.math_panel}>
 			<div>
-				<PostList handleCorrect={handleCorrect} posts={posts} />
+				{
+					(posts.length === 0) ? <h1>No task</h1>
+						: <PostList className={classes.questionList} handleCorrect={handleCorrect} posts={posts} />
+				}
 			</div>
 		</div>
 	);
