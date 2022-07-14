@@ -1,3 +1,4 @@
+import * as React from 'react';
 import classes from './LabelTask.module.css';
 
 function LabelTask({ children, ...props }) {

@@ -2,6 +2,7 @@ import MyInput from '../UI/MyInput/MyInput';
 import SubmitButton from '../UI/SubmitButton/SubmitButton';
 import LabelTask from '../UI/LabelTask/LabelTask';
 import classes from './QuestionBlock.module.css';
+import * as React from 'react';
 import { useState } from 'react';
 
 function QuestionBlock(props) {

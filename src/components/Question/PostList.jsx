@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import QuestionBlock from './QuestionBlock';
 import classes from './QuestionBlock.module.css';
 
